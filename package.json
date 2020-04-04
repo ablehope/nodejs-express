@@ -1,28 +1,26 @@
 {
   "name": "express",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.2",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {},
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "keywords": [],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ablehope/nodejs-express.git"
   },
   "author": "Sasha Prokofyev",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "express-handlebars": "^4.0.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
-  },
   "bugs": {
     "url": "https://github.com/ablehope/nodejs-express/issues"
   },
-  "homepage": "https://github.com/ablehope/nodejs-express#readme",
-  "description": ""
+  "homepage": "https://github.com/ablehope/nodejs-express#readme"
 }
