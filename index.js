@@ -1,6 +1,8 @@
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
+const Handlebars = require('handlebars')
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 const exphbs = require('express-handlebars');
 const app = express();
 const homeRoutes = require('./routes/home');
@@ -10,7 +12,8 @@ const coursesRoutes = require('./routes/courses');
 
 const hbs = exphbs.create({
     defaultLayout: 'main',
-    extname: 'hbs'
+    extname: 'hbs',
+    handlebars: allowInsecurePrototypeAccess(Handlebars)
 })
 
 app.engine('hbs', hbs.engine);
@@ -28,7 +31,7 @@ const PORT = process.env.PORT || 3000
 
 async function start() {
     try {
-        const url = `mongodb+srv://alexander:qeGGecEKFu3FtcPy@cluster0-kmwt5.mongodb.net/test?retryWrites=true&w=majority`;
+        const url = `mongodb+srv://alexander:qeGGecEKFu3FtcPy@cluster0-kmwt5.mongodb.net/shop`;
         await mongoose.connect(url, {
             useNewUrlParser: true,
             useUnifiedTopology: true
