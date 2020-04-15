@@ -43,7 +43,7 @@ userSchema.methods.addToCart = function(course) {
     })
   }
 
-  this.card = {items}
+  this.cart = {items}
   return this.save()
 }
 
