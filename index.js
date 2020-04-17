@@ -14,6 +14,7 @@ const coursesRoutes = require('./routes/courses');
 const authRoutes = require('./routes/auth');
 const User = require('./models/user');
 const varMiddleware = require('./middleware/variables');
+const userMiddleware = require('./middleware/user');
 
 const MONGODB_URI = `mongodb+srv://alexander:qeGGecEKFu3FtcPy@cluster0-kmwt5.mongodb.net/shop`;
 
@@ -43,6 +44,7 @@ app.use(session({
     store: store
 }))
 app.use(varMiddleware);
+app.use(userMiddleware);
 
 app.use('/', homeRoutes);
 app.use('/add', addRoutes);
